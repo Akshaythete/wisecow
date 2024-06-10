@@ -48,13 +48,19 @@ jobs:
 
     - name: Start Minikube
       run: |
-        sudo minikube start --driver=none --kubernetes-version=v1.21.0
+        # Start Minikube and set up configuration directory
+        minikube start --driver=none --kubernetes-version=v1.21.0
+        mkdir -p $HOME/.kube $HOME/.minikube
+        sudo cp -r /root/.kube /root/.minikube $HOME/
         sudo chown -R $USER $HOME/.kube $HOME/.minikube
+
+    - name: Update kubeconfig
+      run: minikube update-context
+
+    - name: Debug Cluster Info
+      run: |
         kubectl cluster-info
+        kubectl get nodes
 
     - name: Deploy to Minikube
-      env:
-        KUBECONFIG: ${{ runner.temp }}/kubeconfig
-      run: |
-        minikube update-context
-        kubectl apply -f k8s/
+      run: kubectl apply -f k8s/

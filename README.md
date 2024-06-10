@@ -26,3 +26,13 @@ Deploy the wisecow application as a k8s app
 1. Github repo containing the app with corresponding dockerfile, k8s manifest, any other artifacts needed.
 2. Github repo with corresponding github action.
 3. Github repo should be kept private and the access should be enabled for following github IDs: nyrahul, SujithKasireddy
+
+
+##RESULT
+![Screenshot (28)](https://github.com/Akshaythete/wisecow/assets/143180761/b2ac47b4-6367-4b3e-938a-b5fd20de7261)
+![Screenshot (27)](https://github.com/Akshaythete/wisecow/assets/143180761/173237fb-1040-4b08-bd13-e734bf198b02)
+![Screenshot (26)](https://github.com/Akshaythete/wisecow/assets/143180761/f32608fd-6c7f-452b-9789-276b45e098fe)
+
+
+
+
